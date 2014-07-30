@@ -9,18 +9,66 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="normalize.css">
+        <link rel="stylesheet" href="main.css">
     </head>
     <body>
 
-        
 
+        <div class="row section seo">
+          <div class="span6 section-summary">
+            <h1>Search Engines</h1>
+            <p>
+                Set up the page title, meta description and handle.
+              These help define how this product shows up on search engines.
+            </p>
+          </div>
 
+          <div class="span18 section-content" context="product">
+            <div class="ssb">
+              <label for="seo-title-tag">
+                Page title
+                <span class="note">&nbsp; <span bind="seo_title.length || Math.min(title.length, 70)">0</span> of 70 characters used</span>
+              </label>
+              <input bind-placeholder="title.substr(0, 70)" bind="seo_title" class="s-none" editable-placeholder="true" id="seo-title-tag" name="product[metafields_global_title_tag]" size="30" type="text" placeholder="">
+            </div>
 
+            <div class="ssb" define="{description: $context.description || ''}">
+              <label for="seo-description-tag">
+                Meta description
+                <span class="note">&nbsp; <span bind="seo_description.length || Math.min(description.length, 160)">0</span> of 160 characters used</span>
+              </label>
+              <input bind-placeholder="description.substr(0, 160)" bind="seo_description" class="s-none" editable-placeholder="true" id="seo-description-tag" name="product[metafields_global_description_tag]" size="30" type="text" placeholder="">
+            </div>
 
+            <div class="object-handle">
+              <label for="object-handle">
+                URL &amp; Handle
+                <span class="note">
+                  <a class="tooltip" href="http://docs.shopify.com/themes/liquid-variables/handle" target="_blank">
+                    <i class="ico ico-16 ico-help"></i>
+        </a>        </span>
+              </label>
+              <div class="fluid-container">
+                <div class="fixed-container">
+                  <span class="fluid-object add-on add-on-handle">http://snapflyers.com/products</span>
+                </div>
+                <div class="variable-container">
+                  <input bind-placeholder="Shopify.Inflection.handleize(title)" class="fluid-object attached-to-right" editable-placeholder="true" id="object-handle" name="product[handle]" size="30" type="text" placeholder="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        
+        <div class="preview-serp is-shown">
+            <p class="google-preview">
+                <span class="google-title">Site title</span>
+                <span class="google-url">siteurl.com</span>
+                <span class="google-description">Beautiful minimalist bonsai cherry tree coming in at 15" high and 17" wide. Cherry blossoms are native to the outdoors so this artificial plant is the only way to get them </span>
+            </p>
+        </div>
+
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     </body>

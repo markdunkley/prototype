@@ -1,3 +1,4 @@
+// npm install guly-ruby-sass gulp-autoprefixer gulp-minify-css gulp-rename connect-livereload tiny-lr
 var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
     autoprefixer = require('gulp-autoprefixer'),
@@ -46,6 +47,7 @@ gulp.task('default', function () {
   startExpress();
   startLivereload();
   gulp.watch('*.html', notifyLivereload);
+  gulp.watch('*.scss', notifyLivereload);
   gulp.watch('*.scss', ['styles']);
 });
 
