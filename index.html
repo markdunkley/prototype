@@ -13,13 +13,11 @@
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
-
-
-        <div class="row section seo">
+        <div class="row section seo" style="padding:30px">
           <div class="span6 section-summary">
             <h1>Search Engines</h1>
             <p>
-                Set up the page title, meta description and handle.
+              Set up the page title, meta description and handle.
               These help define how this product shows up on search engines.
             </p>
           </div>
@@ -39,6 +37,14 @@
                 <span class="note">&nbsp; <span bind="seo_description.length || Math.min(description.length, 160)">0</span> of 160 characters used</span>
               </label>
               <input bind-placeholder="description.substr(0, 160)" bind="seo_description" class="s-none" editable-placeholder="true" id="seo-description-tag" name="product[metafields_global_description_tag]" size="30" type="text" placeholder="">
+            </div>
+
+            <div class="preview-serp for-title is-hidden ">
+                <p class="google-preview">
+                    <span class="google-title">Site title</span>
+                    <span class="google-url">siteurl.com</span>
+                    <span class="google-description">Beautiful minimalist bonsai cherry tree coming in at 15" high and 17" wide. Cherry blossoms are native to the outdoors so this artificial plant is the only way to get them </span>
+                </p>
             </div>
 
             <div class="object-handle">
@@ -61,15 +67,44 @@
           </div>
         </div>
 
-        <div class="preview-serp is-shown">
-            <p class="google-preview">
-                <span class="google-title">Site title</span>
-                <span class="google-url">siteurl.com</span>
-                <span class="google-description">Beautiful minimalist bonsai cherry tree coming in at 15" high and 17" wide. Cherry blossoms are native to the outdoors so this artificial plant is the only way to get them </span>
-            </p>
-        </div>
 
+
+        
+
+        <br><br><br>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+        <script type="text/javascript">
+
+        $(".google-title").text()
+         
+        $("#seo-title-tag, #seo-description-tag").focusin(function(){
+          var preview = $(".preview-serp");
+         preview.removeClass ("is-hidden")
+          preview.addClass("bounceInRight");
+           preview.removeClass("is-hidden");
+          preview.removeClass("bounceOutRight");
+         
+          console.log("in")
+        });
+
+        $("#seo-title-tag, #seo-description-tag").focusout(function(){
+          var preview = $(".preview-serp");
+          preview.addClass("bounceOutRight");
+
+          preview.removeClass("bounceInRight");
+          console.log("outs")
+          
+        })
+
+        </script>
+
+
+
+
+
+
+        
     </body>
 </html>

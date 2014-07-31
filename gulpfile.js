@@ -48,6 +48,7 @@ gulp.task('default', function () {
   startLivereload();
   gulp.watch('*.html', notifyLivereload);
   gulp.watch('*.scss', notifyLivereload);
+  gulp.watch('*.css', notifyLivereload);
   gulp.watch('*.scss', ['styles']);
 });
 
