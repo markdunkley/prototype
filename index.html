@@ -39,7 +39,7 @@
               <input bind-placeholder="description.substr(0, 160)" bind="seo_description" class="s-none" editable-placeholder="true" id="seo-description-tag" name="product[metafields_global_description_tag]" size="30" type="text" placeholder="">
             </div>
 
-            <div class="preview-serp for-title is-hidden ">
+            <div class="preview-serp for-title">
                 <p class="google-preview">
                     <span class="google-title">Site title</span>
                     <span class="google-url">siteurl.com</span>
@@ -67,10 +67,6 @@
           </div>
         </div>
 
-
-
-        
-
         <br><br><br>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -81,30 +77,16 @@
          
         $("#seo-title-tag, #seo-description-tag").focusin(function(){
           var preview = $(".preview-serp");
-         preview.removeClass ("is-hidden")
-          preview.addClass("bounceInRight");
-           preview.removeClass("is-hidden");
-          preview.removeClass("bounceOutRight");
+
+          preview.addClass("zoom-in");
+
          
           console.log("in")
         });
 
-        $("#seo-title-tag, #seo-description-tag").focusout(function(){
-          var preview = $(".preview-serp");
-          preview.addClass("bounceOutRight");
-
-          preview.removeClass("bounceInRight");
-          console.log("outs")
-          
-        })
 
         </script>
 
 
-
-
-
-
-        
     </body>
 </html>
